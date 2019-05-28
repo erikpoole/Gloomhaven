@@ -10,6 +10,5 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "upper-case": "^1.1.3"
   }
 }
