@@ -1,0 +1,1 @@
+[{"id":"bearDefault","value":"18"},{"id":"tyrantDefault","value":"10"},{"id":"expDefault","value":"0"},{"id":"bearCurrent","value":"13"},{"id":"tyrantCurrent","value":"7"},{"id":"expCurrent","value":"8"}]
