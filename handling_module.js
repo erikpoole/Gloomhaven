@@ -11,14 +11,10 @@ exports.handleUpdate = function(filename, res) {
     let name = request.split("=")[0];
     let count = request.split("=")[1];
 
-    let parameters = readJSONFromFile("./data.txt");
-    for (let i = 0; i < parameters.length; i++) {
-        if (parameters[i].id === name) {
-            parameters[i].value = count;
-        }
-    }
+    let parameters = readJSONFromFile("./data.json");
+    parameters[name] = count;
 
-    fs.writeFileSync("./data.txt", JSON.stringify(parameters), function (err) {
+    fs.writeFileSync("./data.json", JSON.stringify(parameters), function (err) {
         if (err) {
             throw err;
         }
@@ -33,12 +29,8 @@ exports.handleInitialRequest = function(filename, res) {
     let request = filename.split("/request/")[1];
 
     let returnValue = "ERROR";
-    let parameters = readJSONFromFile("./data.txt");
-    for (let i = 0; i < parameters.length; i++) {
-        if (parameters[i].id === request) {
-            returnValue = parameters[i].value;
-        }
-    }
+    let parameters = readJSONFromFile("./data.json");
+    returnValue = parameters[request];
 
     console.log("Sent value for: " + request);
     res.writeHead(200);
