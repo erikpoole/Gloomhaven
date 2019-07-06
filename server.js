@@ -1,11 +1,14 @@
 const http = require('http')
-const url = require('url')
 
 const handling = require('./handling_module')
 
 http
   .createServer(function (req, res) {
-    let filename = '.' + url.URL(req.url, true).pathname
+    let filename = '.' + req.url
+    console.log(filename)
+    if (filename === './') {
+      filename = './index.html'
+    }
 
     if (filename.includes('/update/')) {
       handling.handleUpdate(filename, res)

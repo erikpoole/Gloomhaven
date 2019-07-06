@@ -51,3 +51,32 @@ exports.handleFileRequest = function (filename, res) {
     }
   })
 }
+// exports.handleFileRequest = function (filename, res) {
+//   return new Promise(function (resolve, reject) {
+//     fs.readFile(filename, (err, data) => {
+//       err ? reject(err) : resolve(data)
+//     })
+//   })
+//   .then((data) => {
+//     res.writeHead(200, { 'Content-Type': 'text/html' })
+//     res.write(data)
+//     console.log('Sent: ' + filename)
+//     res.end()
+//   })
+//   .catch((err) =>)
+//   fs.readFile(filename, function (err, data) {
+//     if (err) {
+//       res.writeHead(404, { 'Content-Type': 'text/html' })
+//       console.log('Failed')
+//       res.end('404 Not Found')
+//     }
+//     }
+//   })
+// }
+// function getData(fileName, type) {
+//   return new Promise(function(resolve, reject){
+//     fs.readFile(fileName, type, (err, data) => {
+//         err ? reject(err) : resolve(data);
+//     });
+//   });
+// }
